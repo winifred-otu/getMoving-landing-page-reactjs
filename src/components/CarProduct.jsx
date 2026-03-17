@@ -101,7 +101,7 @@ const CarProduct = () => {
 
   }
   const backToAllCars = () => {
-    window.location.href = '/cars'
+    // window.location.href = '/cars'
     navigate('/cars')
   }
 

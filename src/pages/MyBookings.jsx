@@ -98,8 +98,8 @@ const MyBookings = () => {
                         <div className='flex flex-col'>
                           <p>Rental Period</p>
                           <p className='font-bold text-sm'>
-                            {new Date(booking.pickupDate).toDateString()}
-                            <span className='font-normal'> to</span> {new Date(booking.returnDate).toDateString()}
+                            {new Date(booking.pickupDate).toISOString().split('T')[0]}
+                            <span className='font-normal'> to</span> {new Date(booking.returnDate).toISOString().split('T')[0]}
                           </p>
                         </div>
                       </div>
@@ -126,7 +126,7 @@ const MyBookings = () => {
                         {currency}{booking.carTotal.toFixed(2)}
                       </p>
                       <p className='text-sm'>
-                        Booked on {new Date(booking.myBookingDay).toLocaleString()}
+                        Booked on {new Date(booking.myBookingDay).toISOString().split('T')[0]}
                       </p>
                     </div>
                     <button className='bg-pink-700 px-6 py-2 

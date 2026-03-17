@@ -27,7 +27,7 @@ const Confirmation = () => {
                   <div className='font-bold text-sm flex flex-col gap-1'>
                     Rental period:
                     <p className='font-normal text-sm'>
-                      {new Date(booking.pickupDate).toLocaleDateString()} to {new Date(booking.returnDate).toLocaleDateString()}
+                      {new Date(booking.pickupDate).toISOString().split('T')[0]} to {new Date(booking.returnDate).toISOString().split('T')[0]}
                     </p>
                   </div>
                   <div className='flex gap-2 text-sm'>
