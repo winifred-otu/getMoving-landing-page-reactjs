@@ -56,7 +56,7 @@ const RentalFleet = () => {
 
         </div>
         {/* middle - car image */}
-        <div className='w-full h-80 md:w-11/12 lg:w-[80%] md:mx-auto
+        <div className='w-full xxs:h-58 xs:h-70 md:h-80 md:w-11/12 lg:w-[80%] md:mx-auto
         transition-all duration-500 '>
           <img src={image} alt={carData.name} className='h-full w-full' />
         </div>

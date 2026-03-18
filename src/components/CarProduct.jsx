@@ -126,7 +126,7 @@ const CarProduct = () => {
           <div className='grid gap-8 md:grid-cols-[1fr_0.9fr] 
           lg:grid-cols-[1.1fr_0.6fr] '>
             {/* car Item main image  */}
-            <img src={image} alt={carData.name} className='w-full xxs:h-70 xs:h-90
+            <img src={image} alt={carData.name} className='w-full xxs:h-50 xs:h-65
             rounded-lg ring ring-gray-200 shadow-sm'/>
             {/* booking details */}
             <div className='ring ring-gray-200 shadow-lg p-5 flex
