@@ -33,7 +33,7 @@ const HowTo = () => {
             <MdSupportAgent className='text-blue-800 mb-7' size={70} />
           </span>
           <p className='text-lg font-bold'>Contact Operator</p>
-          <p>Our knowledgeable and friendly operators are always ready t0 help
+          <p>Our knowledgeable and friendly operators are always ready to help
             with any questions or concerns.
           </p>
         </div>

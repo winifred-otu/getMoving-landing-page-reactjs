@@ -60,11 +60,11 @@ return (
         </div>
 
         <div className='ring ring-gray-700 shadow-xs shadow-gray-500
-          w-full md:w-[50%] flex items-center mx-auto px-3'>
+          w-full md:w-[75%] lg:w-[55%] flex items-center mx-auto px-3'>
           <img src={ICONS.search.src} alt={ICONS.search.alt} className='
           w-5 h-5'/>
           <input type="text" placeholder='Search by make, model, or features'
-            className='w-75 px-3 py-3 flex-1 outline-0' value={search}
+            className='w-75 px-3 py-3 md:py-2.5  flex-1 outline-0' value={search}
             onChange={(e) => setSearch(e.target.value)} />
           <img src={ICONS.filterIcon.src} alt={ICONS.filterIcon.alt}
             className='w-5 h-5' />
@@ -75,7 +75,7 @@ return (
       <div className='flex flex-col-reverse justify-between md:flex-row 
       md:items-center gap-2'>
         <select name="sort" id="sort" onChange={(e) => setSortType(e.target.value)}
-          className='outline-0 border border-gray-800 w-[50%] md:w-auto'>
+          className='outline-0 py-2 px-1 md:py-1.5 border border-gray-800 w-[50%] md:w-auto'>
           <option value="Relevant">Sort by: Relevant</option>
           <option value="High to low">High to low</option>
           <option value="Low to high">Low to high</option>

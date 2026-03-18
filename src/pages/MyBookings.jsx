@@ -93,7 +93,7 @@ const MyBookings = () => {
 
                         <div className='flex pt-1'>
                           <img src={ICONS.calender.src}
-                            alt={ICONS.calender.alt} className='w-3 h-3 mt-1' />
+                            alt={ICONS.calender.alt} className='w-3 h-3' />
                         </div>
                         <div className='flex flex-col'>
                           <p>Rental Period</p>
@@ -106,7 +106,7 @@ const MyBookings = () => {
                       <div className='grid grid-cols-[0.2fr_1.7fr] gap-1 items-start'>
                         <div className='flex pt-1'>
                           <img src={ICONS.location.src}
-                            alt={ICONS.locationColoured.alt} className='w-3 h-4' />
+                            alt={ICONS.locationColoured.alt} className='w-3 h-3' />
                         </div>
                         <div className='flex flex-col'>
                           <p className='flex gap-2 items-center'>
@@ -130,7 +130,7 @@ const MyBookings = () => {
                       </p>
                     </div>
                     <button className='bg-pink-700 px-6 py-2 
-                    text-slate-100 md:self-end' 
+                    text-slate-100 md:self-end active:opacity-70' 
                     onClick={() => cancelBooking(booking.id)}>
                       Cancel booking
                     </button>

@@ -141,8 +141,9 @@ const CarProduct = () => {
                 <div className='border border-gray-300 flex justify-between 
                 items-center px-2 rounded-sm py-0.5 shadow-md'>
                   <DatePicker selected={startDate} onChange={(date) =>
-                    setStartDate(date)} wrapperClassName='w-full' className='
-                  text-sm font-medium pl-1.5 py-1 outline-0 w-full' minDate={new Date().toISOString().split('T')[0]}/>
+                    setStartDate(date)} wrapperClassName='w-full' 
+                    placeholderText='mm/dd/yyyy' className='text-sm
+                   font-medium px-2 py-2.5 md:py-2 outline-0 w-full' minDate={new Date().toISOString().split('T')[0]}/>
                   <img src={ICONS.calender.src} alt={ICONS.calender.alt}
                     className='w-4 h-4' />
                 </div>
@@ -152,8 +153,9 @@ const CarProduct = () => {
                 <div className='border border-gray-300 flex justify-between 
                 items-center px-2 rounded-sm py-0.5 shadow-md'>
                   <DatePicker selected={endDate} onChange={(date) =>
-                    setEndDate(date)} wrapperClassName='w-full' className='
-                  text-sm font-medium py-1 outline-0 w-full' minDate={new Date().toISOString().split('T')[0]}/>
+                    setEndDate(date)} wrapperClassName='w-full' 
+                    placeholderText='mm/dd/yyyy' className='text-sm
+                   font-medium px-2 py-2.5 md:py-2 outline-0 w-full' minDate={new Date().toISOString().split('T')[0]}/>
                   <img src={ICONS.calender.src} alt={ICONS.calender.alt}
                     className='w-4 h-4' />
                 </div>
@@ -164,7 +166,7 @@ const CarProduct = () => {
                 </p>
               </div>
               <button type='submit'
-                className='bg-blue-800 text-slate-100 py-2.5 px-4 
+                className='bg-blue-800 text-slate-100 py-3 px-4 
               text-sm font-bold w-full'>
                 Reserve Now
               </button>

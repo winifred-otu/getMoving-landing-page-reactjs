@@ -130,37 +130,37 @@ const Contact = () => {
             <div className='flex flex-col lg:flex-row gap-3'>
               <input type="text" placeholder='Name' name='fullname'
               value={contact.fullname} onChange={handleContactChange}
-              className='borderborder-gray-300 px-2 py-3 
+              className='borderborder-gray-300 px-2 py-4 
               placeholder-shown:text-sm shadow-lg outline-0 w-full'/>
               <input type="email" placeholder='Email'  name='email'
               value={contact.email} onChange={handleContactChange}
-              className='borderborder-gray-300 px-2 py-2 
+              className='borderborder-gray-300 px-2 py-4 md:py-3 
               placeholder-shown:text-sm shadow-lg outline-0 w-full'/>
             </div>
             <div className='flex flex-col md:flex-row gap-3'>
               <input type="text" placeholder='Your Favourite Colour'
               name='colour' value={contact.colour}
               onChange={handleContactChange} 
-              className='border border-gray-300 px-2 py-3 placeholder-shown:text-sm
+              className='border border-gray-300 px-2 py-4 md:py-3 placeholder-shown:text-sm
               shadow-lg outline-0 w-full'/>
               <input type="text" placeholder='Your Lucky Number'
               name='number' value={contact.number}
               onChange={handleContactChange}
-              className='border border-gray-300 px-2 py-3 placeholder-shown:text-sm
+              className='border border-gray-300 px-2 py-4 md:py-3 placeholder-shown:text-sm
               shadow-lg outline-0 w-full'/>
             </div>
             <div>
               <textarea cols={40} rows={5} placeholder='Message'
               name='message' value={contact.message}
               onChange={handleContactChange} 
-              className='border border-gray-300 px-2 py-3 w-full
+              className='border border-gray-300 px-2 py-4 md:py-3 w-full
               placeholder-shown:text-sm shadow-lg resize-none 
               outline-0' />
             </div>
             <button type='submit' className='bg-blue-800 text-slate-100
-            py-3 px-2 flex items-center justify-center gap-1 w-[50%]
+            py-4 px-2 flex items-center justify-center gap-1 w-[50%]
             lg:w-[30%] self-center md:self-start text-sm'>
-              Submit Now <FaCheckCircle size={10} className='mt-1' />
+              Submit Now <FaCheckCircle size={10} className='' />
             </button>
           </form>
         </div>

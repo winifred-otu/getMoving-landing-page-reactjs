@@ -98,7 +98,7 @@ const Navbar = () => {
 
       <ul className='hidden md:flex gap-6 font-bold 
       min-[768px]:max-[820px]:grid! min-[768px]:max-[820px]:items-center
-      min-[768px]:max-[820px]:grid-cols-[0.3fr_0.7fr_1fr_0.5fr]'>
+      min-[768px]:max-[820px]:grid-cols-[0.3fr_0.7fr_1fr]'>
         <NavLink to={"/"} >
           <p>Home</p>
           <hr className='hidden min-h-0.5 mt-1 bg-blue-600
@@ -179,64 +179,36 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        {/* medium screen Login */}
-        <div className=' lg:hidden py-2 px-4 bg-blue-800 text-slate-100 cursor-pointer
-        active:opacity-80'>
-          <div >
-            <p onClick={() => setIsOpenLogin(!isOpenLogin)}>Login</p>
-            <Login isOpen={isOpenLogin}
-              onClose={() => setIsOpenLogin(!isOpenLogin)}>
-              <form action="" onSubmit={handleLoginSubmit}
-                className='flex flex-col gap-5 text-gray-800'>
-                <label htmlFor="email" className='flex flex-col gap-1'>
-                  <span className='font-bold'>Email</span>
-                  <input type="email" id='email' placeholder='Enter your email'
-                    className='border border-gray-500 block px-2 py-1.5 w-full
-                placeholder-shown:text-sm outline-0'
-                    name='email' value={login.email} onChange={handleLoginChange} />
-                </label>
-                <label htmlFor="pwd" className='flex flex-col gap-1'>
-                  <span className='font-bold'>Password</span>
-                  <input type="password" id='pwd' placeholder='Enter your password'
-                    className='border border-gray-500 block px-2 py-1.5 w-full
-                placeholder-shown:text-sm outline-0'
-                    name='password' value={login.password} onChange={handleLoginChange} />
-                </label>
-                <p className='text-sm font-medium'>Create an account?
-                  <span className='text-blue-800 cursor-pointer'
-                    onClick={() => (setIsOpenLogin(false), setIsOpenRegister(!isOpenRegister))}>
-                    click here</span>
-                </p>
-                <button type='submit' className='bg-blue-800 py-2 font-bold
-              text-slate-100 active:opacity-90'>
-                  Login
-                </button>
-              </form>
-
-            </Login>
-          </div>
-        </div>
       </ul>
 
-      {/* large screen */}
-      <ul className='hidden lg:flex lg:gap-6 font-bold items-center
-      text-md'>
-        <div className='mb-2 cursor-pointer active:text-blue-800'>
-          <p onClick={() => setIsOpenLogin(!isOpenLogin)}>Login</p>
+      {/* medium /large screen */}
+      <ul className='hidden md:flex lg:gap-6 font-bold items-center
+      text-md  '>
+        <div className='flex mb-2 cursor-pointer 
+           md:bg-blue-800 md:text-slate-100 
+         md:active:opacity-80  lg:active:text-blue-800 
+         lg:bg-transparent lg:text-gray-700 lg:active:opacity-100
+         '>
+          <p onClick={() => setIsOpenLogin(!isOpenLogin)} className='
+          md:py-2 md:px-4 lg:py-0.5 lg:px-0'>
+            Login
+          </p>
           <Login isOpen={isOpenLogin} onClose={() => setIsOpenLogin(!isOpenLogin)}>
             <form action="" onSubmit={handleLoginSubmit}
               className='flex flex-col gap-5 text-gray-800'>
               <label htmlFor="email" className='flex flex-col gap-1'>
                 <span className='font-bold'>Email</span>
                 <input type="email" id='email' placeholder='Enter your email'
-                  className='border border-gray-500 block px-2 py-1.5 w-full
+                  className='border border-gray-500 block px-2 py-2.5
+                  md:py-2 w-full
                 placeholder-shown:text-sm outline-0'
                   name='email' value={login.email} onChange={handleLoginChange} />
               </label>
               <label htmlFor="pwd" className='flex flex-col gap-1'>
                 <span className='font-bold'>Password</span>
                 <input type="password" id='pwd' placeholder='Enter your password'
-                  className='border border-gray-500 block px-2 py-1.5 w-full
+                  className='border border-gray-500 block px-2 py-2.5 
+                  md:py-2 w-full
                 placeholder-shown:text-sm outline-0'
                   name='password' value={login.password} onChange={handleLoginChange} />
               </label>
@@ -245,8 +217,8 @@ const Navbar = () => {
                   onClick={() => (setIsOpenLogin(false), setIsOpenRegister(!isOpenRegister))}>
                   click here</span>
               </p>
-              <button type='submit' className='bg-blue-800 py-2 font-bold
-              text-slate-100 active:opacity-90'>
+              <button type='submit' className='bg-blue-800 py-2.5 md:py-2
+              font-bold text-slate-100 active:opacity-90'>
                 Login
               </button>
             </form>
@@ -254,7 +226,7 @@ const Navbar = () => {
           </Login>
         </div>
 
-        <div >
+        <div className='hidden lg:flex'>
           <p className='mb-2 py-2 px-4 bg-blue-800 text-slate-100 cursor-pointer
         active:opacity-80' onClick={() => setIsOpenRegister(!isOpenRegister)}>
             Register
@@ -266,21 +238,24 @@ const Navbar = () => {
               <label htmlFor="text" className='flex flex-col gap-1'>
                 <span className='font-bold'>Name</span>
                 <input type="text" id='name' placeholder='Enter your fullname'
-                  className='border border-gray-500 block px-2 py-1.5 w-full
+                  className='border border-gray-500 block px-2 py-2.5 
+                  md:py-2 w-full
                 placeholder-shown:text-sm outline-0'
                   name='name' value={register.name} onChange={handleRegisterChange} />
               </label>
               <label htmlFor="email" className='flex flex-col gap-1'>
                 <span className='font-bold'>Email</span>
                 <input type="email" id='email1' placeholder='Enter your email'
-                  className='border border-gray-500 block px-2 py-1.5 w-full
+                  className='border border-gray-500 block px-2 py-2.5
+                  md:py-2 w-full
                 placeholder-shown:text-sm outline-0'
                   name='email' value={register.email} onChange={handleRegisterChange} />
               </label>
               <label htmlFor="pwd" className='flex flex-col gap-1'>
                 <span className='font-bold'>Password</span>
                 <input type="password" id='pwd1' placeholder='Enter your password'
-                  className='border border-gray-500 block px-2 py-1.5 w-full
+                  className='border border-gray-500 block px-2 py-2.5 
+                  md:py-2 w-full
                 placeholder-shown:text-sm outline-0'
                   name='password' value={register.password} onChange={handleRegisterChange} />
               </label>
@@ -289,8 +264,8 @@ const Navbar = () => {
                   onClick={() => (setIsOpenRegister(false), setIsOpenLogin(!isOpenLogin))}>
                   click here</span>
               </p>
-              <button type='submit' className='bg-blue-800 py-2 font-bold
-              text-slate-100 active:opacity-90'>
+              <button type='submit' className='bg-blue-800 py-2.5 md:py-2
+              font-bold text-slate-100 active:opacity-90'>
                 Create Account
               </button>
             </form>
@@ -328,7 +303,10 @@ const Navbar = () => {
                 <NavLink to={'/my-bookings'} className={'py-2'}>
                   <p>My Bookings</p>
                 </NavLink>
-                <p className={` ${hasNewBooking ? 'absolute h-2 w-2 rounded-full bg-blue-700 top-1 right-36 animate-pulse':''}`}></p>
+                <p className={`
+                   ${hasNewBooking ? 
+                   'absolute h-2 w-2 rounded-full bg-blue-700 top-1 right-43 animate-pulse min-[400px]:max-[450px]:right-28 min-[343px]:max-[370px]:right-19 min-[374px]:max-[391px]:right-23':''}`}>
+                   </p>
               </div>
             </div>
             <p className=' mb-3 p-2 w-full hover:bg-slate-200 
@@ -356,35 +334,6 @@ const Navbar = () => {
                 cursor-pointer'>
                   Login
                 </p>
-                <Login isOpen={isOpenLogin} onClose={() => setIsOpenLogin(!isOpenLogin)}>
-                  <form action="" onSubmit={handleLoginSubmit}
-                    className='flex flex-col gap-5 text-gray-800'>
-                    <label htmlFor="email" className='flex flex-col gap-1'>
-                      <span className='font-bold'>Email</span>
-                      <input type="email" id='email' placeholder='Enter your email'
-                        className='border border-gray-500 block px-2 py-1.5 w-full
-                placeholder-shown:text-sm outline-0'
-                        name='email' value={login.email} onChange={handleLoginChange} />
-                    </label>
-                    <label htmlFor="pwd" className='flex flex-col gap-1'>
-                      <span className='font-bold'>Password</span>
-                      <input type="password" id='pwd' placeholder='Enter your password'
-                        className='border border-gray-500 block px-2 py-1.5 w-full
-                placeholder-shown:text-sm outline-0'
-                        name='password' value={login.password} onChange={handleLoginChange} />
-                    </label>
-                    <p className='text-sm font-medium'>Create an account?
-                      <span className='text-blue-800 cursor-pointer'
-                        onClick={() => (setIsOpenLogin(false), setIsOpenRegister(!isOpenRegister))}>
-                        click here</span>
-                    </p>
-                    <button type='submit' className='bg-blue-800 py-2 font-bold
-              text-slate-100 active:opacity-90'>
-                      Login
-                    </button>
-                  </form>
-
-                </Login>
               </div>
 
 
@@ -394,42 +343,6 @@ const Navbar = () => {
                 cursor-pointer'>
                   Register
                 </p>
-                <Register isOpen={isOpenRegister}
-                  onClose={() => setIsOpenRegister(!isOpenRegister)}>
-                  <form action="" onSubmit={handleRegisterSubmit}
-                    className='flex flex-col gap-5 text-gray-800'>
-                    <label htmlFor="text" className='flex flex-col gap-1'>
-                      <span className='font-bold'>Name</span>
-                      <input type="text" id='name' placeholder='Enter your fullname'
-                        className='border border-gray-500 block px-2 py-1.5 w-full
-                placeholder-shown:text-sm outline-0'
-                        name='name' value={register.name} onChange={handleRegisterChange} />
-                    </label>
-                    <label htmlFor="email" className='flex flex-col gap-1'>
-                      <span className='font-bold'>Email</span>
-                      <input type="email" id='email1' placeholder='Enter your email'
-                        className='border border-gray-500 block px-2 py-1.5 w-full
-                placeholder-shown:text-sm outline-0'
-                        name='email' value={register.email} onChange={handleRegisterChange} />
-                    </label>
-                    <label htmlFor="pwd" className='flex flex-col gap-1'>
-                      <span className='font-bold'>Password</span>
-                      <input type="password" id='pwd1' placeholder='Enter your password'
-                        className='border border-gray-500 block px-2 py-1.5 w-full
-                placeholder-shown:text-sm outline-0'
-                        name='password' value={register.password} onChange={handleRegisterChange} />
-                    </label>
-                    <p className='text-sm font-medium'>Already have an account?
-                      <span className='text-blue-800 cursor-pointer'
-                        onClick={() => (setIsOpenRegister(false), setIsOpenLogin(!isOpenLogin))}>
-                        click here</span>
-                    </p>
-                    <button type='submit' className='bg-blue-800 py-2 font-bold
-              text-slate-100 active:opacity-90'>
-                      Create Account
-                    </button>
-                  </form>
-                </Register>
               </div>
 
             </ul>

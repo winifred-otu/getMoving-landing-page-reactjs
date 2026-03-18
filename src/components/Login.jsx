@@ -9,8 +9,8 @@ const Login = ({ isOpen, onClose, children }) => {
     <div className='fixed top-0 right-0 left-0 bottom-0 bg-black/30 
       z-100 flex-col justify-center flex' >
       <div className='w-[80%] md:w-[45%] lg:w-[30%] mx-auto flex flex-col gap-2'>
-        <span onClick={onClose} className='inline-flex justify-end 
-        items-center py-1 text-slate-100 cursor-pointer'>
+        <span onClick={onClose} className='inline-block text-center justify-end 
+         self-end py-1 text-slate-100 cursor-pointer w-7.5'>
           X</span>
         <div className='bg-slate-100 flex flex-col px-7 py-10
         gap-7 rounded-lg shadow-xl'>

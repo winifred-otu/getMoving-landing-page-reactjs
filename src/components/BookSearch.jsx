@@ -4,18 +4,21 @@ import { cars } from "../assets/assets"
 import DatePicker from 'react-datepicker'
 import { BiSearch } from 'react-icons/bi'
 import { RentalContext } from '../Context/RentalContext'
+import { toast } from 'react-toastify'
 
 
 const Booking = () => {
   const { search, setSearch, navigate,  
   } = useContext(RentalContext)
-  const [startDate, setStartDate] = useState(new Date())
-  const [endDate, setEndDate] = useState(new Date())
+  const [startDate, setStartDate] = useState()
+  const [endDate, setEndDate] = useState()
 
   const searchItem = () => {
     if (search && startDate && endDate) {
       search;
       navigate('/cars');
+    } else if(!search || !startDate || !endDate){
+      toast.error('Fill all input fields')
     }
   }
 
@@ -62,10 +65,11 @@ const Booking = () => {
               <span className='text-red-500'>*</span>
             </span>
           </p>
-          <select name="select" id="select" required className='border mt-3 
-          text-sm p-1 text-gray-500 outline-0 w-full md:w-auto' 
+          <select name="select" id="select" required className=' mt-3 
+          text-sm px-2 py-2.5 md:py-2 text-gray-600 outline-0 w-full 
+          md:w-auto cursor-pointer' 
           onChange={(e) => setSearch(e.target.value)}>
-            <option defaultValue="" className='text-gray-800'>Select pick-up location</option>
+            <option value="" className='text-gray-800'>Select pick-up location</option>
             <option value="Abia" className='text-gray-800'>Abia</option>
             <option value="Ebonyi" className='text-gray-800'>Ebonyi</option>
             <option value="Imo" className='text-gray-800'>Imo</option>
@@ -106,8 +110,10 @@ const Booking = () => {
             </span>
           </p>
           <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}
-            wrapperClassName='w-full md:w-auto' className='border mt-3 text-sm p-1 text-gray-500
-           outline-0 w-full md:w-auto'/>
+            wrapperClassName='w-full md:w-auto' minDate={new Date()}
+            placeholderText='MM/DD/YYYY' required
+            className=' mt-3 text-sm px-2 py-2.5 md:py-2 text-gray-600
+           outline-0 w-full md:w-auto cursor-pointer'/>
         </div>
 
         {/* select drop-off date */}
@@ -120,8 +126,10 @@ const Booking = () => {
             </span>
           </p>
           <DatePicker selected={endDate} onChange={(date) => setEndDate(date)}
-            wrapperClassName='w-full md:w-auto' className='border mt-3 text-sm 
-          p-1 text-gray-500 outline-0 w-full md:w-auto'/>
+            wrapperClassName='w-full md:w-auto' minDate={new Date()} 
+            placeholderText='MM/DD/YYYY' required
+            className=' mt-3 text-sm px-2 py-2.5 md:py-2 text-gray-600
+           outline-0 w-full md:w-auto cursor-pointer'/>
 
         </div>
 

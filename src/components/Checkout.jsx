@@ -93,7 +93,7 @@ const Checkout = () => {
                                 <span className='block text-sm font-medium'>Email</span>
                                 <input type="email" id='email' name='email' value={pay.email}
                                     placeholder='you@example.com' onChange={handlePaymentChange}
-                                    className='border border-gray-500 px-2 py-1 
+                                    className='border border-gray-500 px-2 py-2.5 md:py-2
                             placeholder-shown:text-sm w-full outline-0'/>
                             </label>
                             <div className='flex flex-col gap-3'>
@@ -107,28 +107,29 @@ const Checkout = () => {
                                     border border-gray-500 px-2'>
                                             <input type="text" name='cardNo' value={pay.cardNo}
                                                 placeholder='1234 1234 1234 1234' onChange={handlePaymentChange}
-                                                className='placeholder-shown:text-sm 
-                                        py-1 flex-1 outline-0' min={16} max={16} />
-                                            <div className=' flex gap-0.5'>
-                                                <FaCcMastercard size={20} />
+                                                className='placeholder-shown:text-sm iniline-flex
+                                        py-2.5 md:py-2 flex-1 outline-0 w-[80%] md:w-auto' 
+                                        min={16} max={16} />
+                                            <div className=' flex gap-0.5 w-[20%] md:w-auto'>
                                                 <FaCcVisa size={20} />
                                                 <FaCreditCard size={20} className='xxs:hidden xs:flex' />
+                                                <FaCcMastercard size={20} />      
                                             </div>
                                         </div>
                                         <div className='grid grid-cols-2'>
                                             <input type="text" name='cardDate' value={pay.cardDate}
                                                 placeholder='MM/YY' onChange={handlePaymentChange}
                                                 className='border border-t-0 border-gray-500 
-                                            px-2 py-1 placeholder-shown:text-sm w-full
+                                            px-2 py-2.5 md:py-2 placeholder-shown:text-sm w-full
                                         outline-0'/>
                                             <div className='flex border border-gray-500 border-t-0
                                             border-l-0 items-center px-2'>
                                                 <input type="text" name='cardCvc' value={pay.cardCvc}
                                                     placeholder='CVC' onChange={handlePaymentChange}
-                                                    className='  py-1 flex-1 outline-0 w-full
+                                                    className=' px-1 py-2.5 md:py-2 flex-1 outline-0 w-full
                                             placeholder-shown:text-sm 
                                             ' />
-                                                <FaCreditCard />
+                                                <FaCreditCard size={20}/>
                                             </div>
                                         </div>
                                     </div>
@@ -137,7 +138,7 @@ const Checkout = () => {
                                         <span className='text-sm font-medium'>Cardholder name</span>
                                         <input type="text" id='name' name='cardFullname' value={pay.cardFullname}
                                             placeholder='Full name on card' onChange={handlePaymentChange}
-                                            className='border border-gray-500 px-2 py-1
+                                            className='border border-gray-500 px-2 py-2.5 md:py-2
                                      placeholder-shown:text-sm w-full outline-0
                                     '/>
                                     </label>
@@ -147,7 +148,7 @@ const Checkout = () => {
                                         <select id="country" name='country' value={pay.country}
                                             onChange={handlePaymentChange}
                                             className='border border-gray-500  w-full
-                                        px-2 py-1 placeholder-shown:text-sm outline-0
+                                        px-2 py-2.5 md:py-2 placeholder-shown:text-sm outline-0
                                         text-sm '>
                                             <option value=''>
                                                 Select your country of residence
@@ -160,7 +161,7 @@ const Checkout = () => {
                                         </select>
                                     </label>
                                     <div className='border border-gray-500 
-                                    px-2 py-1 placeholder-shown:text-sm w-full
+                                    px-2 py-2.5 md:py-2 placeholder-shown:text-sm w-full
                                     flex items-start gap-2'>
                                         <input type="checkbox" name='saveInfo'
                                             onChange={handlePaymentChange} checked={pay.saveInfo}
@@ -172,7 +173,7 @@ const Checkout = () => {
                                             </p>
                                         </div>
                                     </div>
-                                    <button type='submit' className='bg-blue-800 py-2.5 px-2
+                                    <button type='submit' className='bg-blue-800 py-2.5 px-2 md:py-2.5
                                 text-slate-100 outline-0'>
                                         Pay
                                     </button>

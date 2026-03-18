@@ -10,7 +10,7 @@ const CarProductItem = ({ id, image, name, make, model, price, transmission, yea
             <div className='relative text-gray-800 group hover:-translate-y-1
              transition-all duration-500 cursor-pointer'>
                 <div className='transition-transform duration-500 group-hover:scale-103'>
-                    <img src={image} alt={name} className='w-100 h-50 
+                    <img src={image} alt={name} className='w-full h-50 
                   rounded-t-lg ' />
                     <div className='absolute top-0'>
                         <p className='m-3 px-2 py-1 bg-blue-700 text-slate-100 text-xs

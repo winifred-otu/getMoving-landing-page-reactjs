@@ -1,7 +1,12 @@
 import React from 'react'
 import {HERO} from "../assets/assets"
+import { useContext } from 'react'
+import { RentalContext } from '../Context/RentalContext'
+import { FaCheckCircle } from 'react-icons/fa'
+import { IoIosArrowForward } from 'react-icons/io'
 
 const Hero = () => {
+const {navigate} = useContext(RentalContext)
   return (
       <div className='mt-20 md:mt-25 text-center md:text-start 
       xxs:px-10 xs:px-15 md:px-15 lg:px-20 xl:px-30
@@ -25,8 +30,17 @@ const Hero = () => {
           flexible pick-up options and much more
         </p>
         <div className='flex flex-col sm:flex-row xl:text-lg md:mt-8 gap-3 mt-4 text-sm'>
-          <button className='border py-3.5 px-7 bg-blue-800 text-slate-100'>Book Now</button>
-          <button className='border py-3.5 px-7 bg-gray-800 text-slate-100'>Learn More</button>
+          <button className='border py-3.5 px-7 bg-blue-800 text-slate-100
+            transition-all duration-500 hover:scale-103 active:opacity-70
+            flex items-center gap-1 justify-center'
+            onClick={() => navigate('/cars')}>
+            Book Now <FaCheckCircle size={15} />
+          </button>
+          <button className='border py-3.5 px-7 bg-gray-800 text-slate-100
+            transition-all duration-500 hover:scale-103 active:opacity-70
+             flex items-center gap-1 justify-center'>
+            Learn More <IoIosArrowForward size={14}/>
+          </button>
         </div>
       </div>
       <img src={HERO.bannerFlip.src} alt={HERO.bannerFlip.alt} className='w-full h-full

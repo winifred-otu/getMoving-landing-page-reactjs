@@ -40,6 +40,7 @@ const RentalFleet = () => {
 
 
       <div className='grid gap-10 md:grid-cols-[195px_1fr_185px]
+      transition-all duration-500 
       lg:grid-cols-[240px_1fr_220px] xl:grid-cols-[300px_1fr_250px] md:gap-0'>
         {/* leftside- car name */}
         <div className=' h-95  overflow-y-scroll scrollbar-hide' >
@@ -55,7 +56,8 @@ const RentalFleet = () => {
 
         </div>
         {/* middle - car image */}
-        <div className='w-full h-80 md:w-11/12 lg:w-[80%] md:mx-auto'>
+        <div className='w-full h-80 md:w-11/12 lg:w-[80%] md:mx-auto
+        transition-all duration-500 '>
           <img src={image} alt={carData.name} className='h-full w-full' />
         </div>
         {/* rightside - car details */}

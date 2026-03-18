@@ -58,7 +58,7 @@ const Confirmation = () => {
 
                 <div>
                   <button className='border bg-gray-800 text-slate-50
-                    text-sm px-3 py-1'>
+                    text-sm px-3 py-2.5 md:py-2'>
                     Track order
                   </button>
                 </div>
