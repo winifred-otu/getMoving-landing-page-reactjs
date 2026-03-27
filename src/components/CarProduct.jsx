@@ -122,15 +122,19 @@ const CarProduct = () => {
           <p>Back to all cars</p>
         </button>
         {/* Item Booking details */}
-        <form className='flex flex-col gap-3' onSubmit={SubmitBooking}>
+        <form className='flex flex-col gap-8 md:gap-0' onSubmit={SubmitBooking}>
           <div className='grid gap-8 md:grid-cols-[1fr_0.9fr] 
-          lg:grid-cols-[1.1fr_0.6fr] '>
+          lg:grid-cols-[0.9fr_0.5fr] '>
             {/* car Item main image  */}
-            <img src={image} alt={carData.name} className='w-full xxs:h-50 xs:h-65
-            rounded-lg ring ring-gray-200 shadow-sm'/>
+           <div className='w-full '>
+            <img src={image} alt={carData.name} className='w-full
+            rounded-lg ring ring-gray-200 shadow-sm xxs:h-50 xs:h-65 md:h-85 lg:h-90'/>
+           </div>
+              
+              
             {/* booking details */}
             <div className='ring ring-gray-200 shadow-lg p-5 flex
-            flex-col gap-5 rounded-lg'>
+            flex-col gap-3 rounded-lg'>
               <div className='flex justify-between border-b border-gray-800
                 pb-3'>
                 <p className='font-bold text-lg'>{currency}{carData.price}</p>
@@ -149,7 +153,7 @@ const CarProduct = () => {
                 </div>
               </div>
               <div className='flex flex-col gap-2'>
-                <p className=' font-bold'>Return Date</p>
+                <p className='font-bold'>Return Date</p>
                 <div className='border border-gray-300 flex justify-between 
                 items-center px-2 rounded-sm py-0.5 shadow-md'>
                   <DatePicker selected={endDate} onChange={(date) =>
@@ -176,21 +180,19 @@ const CarProduct = () => {
             </div>
           </div>
 
-          <div className='flex flex-col gap-5'>
+          <div className='flex flex-col gap-5'> 
             <div className='grid md:grid-cols-[1.2fr_0.6fr] gap-8'>
-              <p className='font-bold text-gray-800
-              xxs:max-w-[90%] xs:max-w-[70%] lg:max-w-[40%] 
-              py-3 px-3 text-xl'>
+              <p className='font-bold text-gray-800 text-xl'>
                 {carData.make} {carData.model} -
                 <span className='font-bold'> {carData.year}</span>
               </p>
-              <div className='opacity-0'></div>
+              <div className='opacity-0 hidden md:flex'></div>
             </div>
 
             {/* bottom images slide */}
             <div className='grid lg:grid-cols-[1.4fr_0.4fr] 
-            xl:grid-cols-[1.2fr_0.6fr] gap-8'>
-              <div className='flex gap-5 overflow-x-scroll
+            xl:grid-cols-[1.2fr_0.6fr] lg:gap-3'>
+              <div className='flex gap-3 md:gap-5 lg:gap-3 overflow-x-scroll
                [scrollbar-width]:none [&::-webkit-scrollbar]:hidden'>
                 {carData.image.map((item, index) => {
                   return <img src={item} alt='' key={index} className='w-30 h-20

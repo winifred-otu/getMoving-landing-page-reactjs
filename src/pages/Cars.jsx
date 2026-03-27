@@ -75,7 +75,7 @@ return (
       <div className='flex flex-col-reverse justify-between md:flex-row 
       md:items-center gap-2'>
         <select name="sort" id="sort" onChange={(e) => setSortType(e.target.value)}
-          className='outline-0 py-2 px-1 md:py-1.5 border border-gray-800 w-[50%] md:w-auto'>
+          className='outline-0 py-1.5 px-1 md:py-1.5 border border-gray-800 w-[60%] md:w-auto'>
           <option value="Relevant">Sort by: Relevant</option>
           <option value="High to low">High to low</option>
           <option value="Low to high">Low to high</option>
